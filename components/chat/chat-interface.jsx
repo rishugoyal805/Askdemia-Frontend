@@ -281,7 +281,6 @@ const Chat = ({ user }) => {
                       <FaEnvelope />
                     </button>
                   </div>
-
                 </>
               ) : (
                 <span>{msg.text}</span>
