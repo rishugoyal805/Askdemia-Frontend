@@ -108,7 +108,7 @@ html, body {
   scroll-behavior: smooth;
 }
 
-.message {
+/* .message {
   display: flex;
   align-items: center;
   max-width: 75%;
@@ -118,6 +118,13 @@ html, body {
   word-wrap: break-word;
   font-size: 15px;
   animation: fadeIn 0.3s forwards;
+} */
+.message {
+  max-width: 75%;
+  padding: 10px;
+  border-radius: 15px;
+  margin: 5px 0;
+  animation: fadeIn 0.3s ease-in-out;
 }
 .message-actions {
   display: flex;
@@ -140,7 +147,7 @@ html, body {
 }
 
 /* User Message */
-.user-message {
+/* .user-message {
   align-self: flex-end;
   background-color: #0078ff;
   color: white;
@@ -149,13 +156,25 @@ html, body {
 }
 
 /* Bot Message */
-.bot-message {
+/*.bot-message {
   align-self: flex-start;
   background-color: #3a89e3;
   color: #ddd;
   border-bottom-left-radius: 5px;
+} */
+.user-message {
+  background-color: #4caf50;
+  color: white;
+  align-self: flex-end;
+  border-radius: 15px 15px 0 15px;
 }
 
+.bot-message {
+  background-color: #374151;
+  color: white;
+  align-self: flex-start;
+  border-radius: 15px 15px 15px 0;
+}
 /* Input Area */
 .chat-input-area {
   display: flex;
