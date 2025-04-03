@@ -198,7 +198,7 @@ import remarkGfm from "remark-gfm";
 import { FaCopy, FaWhatsapp, FaEnvelope, FaSignOutAlt, FaUserCircle, FaTrash } from "react-icons/fa";
 import { logout } from "@/app/actions/auth"; // Import logout function
 
-const Chat = ({user}) => {
+const Chat = ({ user }) => {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
@@ -207,7 +207,7 @@ const Chat = ({user}) => {
 
   const sendMessage = async () => {
     if (!input.trim()) return;
-    
+
     const userMessage = { sender: "You", text: input };
     setMessages((prev) => [...prev, userMessage]);
     setInput("");
@@ -225,7 +225,7 @@ const Chat = ({user}) => {
     } catch (error) {
       setMessages((prev) => [...prev, { sender: "Bot", text: "Sorry, an error occurred." }]);
     }
-    
+
     setLoading(false);
   };
 
@@ -271,10 +271,17 @@ const Chat = ({user}) => {
                 <>
                   <ReactMarkdown remarkPlugins={[remarkGfm]}>{msg.text}</ReactMarkdown>
                   <div className="message-actions">
-                    <FaCopy onClick={() => handleCopy(msg.text)} />
-                    <FaWhatsapp onClick={() => sendToWhatsApp(msg.text)} />
-                    <FaEnvelope onClick={() => sendToGmail(msg.text)} />
+                    <button className="action-button" onClick={() => handleCopy(msg.text)} title="Copy">
+                      <FaCopy />
+                    </button>
+                    <button className="action-button" onClick={() => sendToWhatsApp(msg.text)} title="Share via WhatsApp">
+                      <FaWhatsapp />
+                    </button>
+                    <button className="action-button" onClick={() => sendToGmail(msg.text)} title="Send via Email">
+                      <FaEnvelope />
+                    </button>
                   </div>
+
                 </>
               ) : (
                 <span>{msg.text}</span>
@@ -283,7 +290,7 @@ const Chat = ({user}) => {
           </div>
         ))}
         <div ref={messagesEndRef} />
-        {loading && <div className="loading-spinner"><div className="spinner"></div></div>} 
+        {loading && <div className="loading-spinner"><div className="spinner"></div></div>}
       </div>
       <div className="chat-input-area">
         <textarea
