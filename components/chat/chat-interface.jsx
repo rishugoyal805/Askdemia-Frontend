@@ -198,7 +198,7 @@ import remarkGfm from "remark-gfm";
 import { FaCopy, FaWhatsapp, FaEnvelope, FaSignOutAlt, FaUserCircle, FaTrash } from "react-icons/fa";
 import { logout } from "@/app/actions/auth"; // Import logout function
 
-const Chat = () => {
+const Chat = ({user}) => {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
@@ -253,7 +253,7 @@ const Chat = () => {
             <FaUserCircle className="user-icon" onClick={() => setShowMenu(!showMenu)} />
             {showMenu && (
               <div className="dropdown-menu">
-                <span className="user-id">Current ID: none</span>
+                <span className="user-id">{user?.email || "No Email"}</span>
                 <button onClick={handleLogout} className="dropdown-item">
                   <FaSignOutAlt /> Logout
                 </button>
