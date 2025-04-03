@@ -119,6 +119,25 @@ html, body {
   font-size: 15px;
   animation: fadeIn 0.3s forwards;
 }
+.message-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.action-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  transition: background 0.3s ease-in-out;
+}
+
+.action-button:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
 
 /* User Message */
 .user-message {
