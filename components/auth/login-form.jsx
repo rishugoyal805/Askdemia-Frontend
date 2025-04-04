@@ -41,7 +41,8 @@ export default function LoginForm() {
   }
 
   return (
-    <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
+    <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1,
+      backgroundColor: "rgba(255, 255, 255, 0.05)" }}>
       {error && (
         <Alert severity="error" sx={{ mb: 2 }}>
           {error}
@@ -57,6 +58,23 @@ export default function LoginForm() {
         name="email"
         autoComplete="email"
         autoFocus
+        InputProps={{
+          style: { color: "white" }
+        }}
+        InputLabelProps={{
+          style: { color: "white" }
+        }}
+        sx={{
+          "& .MuiOutlinedInput-root": {
+            "& fieldset": {
+              borderColor: "gray", // Default border color
+            },
+            "&.Mui-focused fieldset": {
+              borderColor: "white", // White border when focused
+            },
+          },
+        }}
+        
       />
 
       <TextField
@@ -68,9 +86,25 @@ export default function LoginForm() {
         type="password"
         id="password"
         autoComplete="current-password"
+        InputProps={{
+          style: { color: "white" }
+        }}
+        InputLabelProps={{
+          style: { color: "white" }
+        }}
+        sx={{
+          "& .MuiOutlinedInput-root": {
+            "& fieldset": {
+              borderColor: "gray", // Default border color
+            },
+            "&.Mui-focused fieldset": {
+              borderColor: "white", // White border when focused
+            },
+          },
+        }}
       />
 
-      <Button type="submit" fullWidth variant="contained" disabled={isLoading} sx={{ mt: 3, mb: 2 }}>
+      <Button type="submit" fullWidth variant="contained" disabled={isLoading} sx={{ mt: 3, mb: 2 }} >
         {isLoading ? <CircularProgress size={24} /> : "Sign In"}
       </Button>
     </Box>

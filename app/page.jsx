@@ -10,13 +10,13 @@ export default async function Home() {
   }
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gray-50">
+    <div className="flex min-h-screen items-center justify-center bg-black">
       <div className="w-full max-w-md">
-        <h1 className="mb-8 text-center text-3xl font-bold">Welcome to AI Chatbot</h1>
+        <h1 className="mb-8 text-center text-white text-3xl font-bold">Welcome to AI Chatbot</h1>
         <LoginForm />
-        <p className="mt-4 text-center text-sm text-gray-600">
+        <p className="mt-4 text-center text-sm text-white">
           Don't have an account?{" "}
-          <a href="/signup" className="font-medium text-blue-600 hover:text-blue-500">
+          <a href="/signup" className="font-medium text-white hover:text-gray-50">
             Sign up
           </a>
         </p>

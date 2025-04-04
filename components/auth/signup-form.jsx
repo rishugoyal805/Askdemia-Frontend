@@ -56,7 +56,23 @@ export default function SignupForm() {
         </Alert>
       )}
 
-      <TextField margin="normal" required fullWidth id="fullName" label="Full Name" name="fullName" autoFocus />
+      <TextField margin="normal" required fullWidth id="fullName" label="Full Name" name="fullName" autoFocus
+      InputProps={{
+        style: { color: "white" }
+      }}
+      InputLabelProps={{
+        style: { color: "white" }
+      }} 
+      sx={{
+        "& .MuiOutlinedInput-root": {
+          "& fieldset": {
+            borderColor: "gray", // Default border color
+          },
+          "&.Mui-focused fieldset": {
+            borderColor: "white", // White border when focused
+          },
+        },
+      }}/>
 
       <TextField
         margin="normal"
@@ -66,9 +82,41 @@ export default function SignupForm() {
         label="Email Address"
         name="email"
         autoComplete="email"
+        InputProps={{
+          style: { color: "white" }
+        }}
+        InputLabelProps={{
+          style: { color: "white" }
+        }}
+        sx={{
+          "& .MuiOutlinedInput-root": {
+            "& fieldset": {
+              borderColor: "gray", // Default border color
+            },
+            "&.Mui-focused fieldset": {
+              borderColor: "white", // White border when focused
+            },
+          },
+        }}
       />
 
-      <TextField margin="normal" required fullWidth name="password" label="Password" type="password" id="password" />
+      <TextField margin="normal" required fullWidth name="password" label="Password" type="password" id="password"
+      InputProps={{
+        style: { color: "white" }
+      }}
+      InputLabelProps={{
+        style: { color: "white" }
+      }}
+      sx={{
+        "& .MuiOutlinedInput-root": {
+          "& fieldset": {
+            borderColor: "gray", // Default border color
+          },
+          "&.Mui-focused fieldset": {
+            borderColor: "white", // White border when focused
+          },
+        },
+      }} />
 
       <TextField
         margin="normal"
@@ -78,6 +126,22 @@ export default function SignupForm() {
         label="Confirm Password"
         type="password"
         id="confirmPassword"
+        InputProps={{
+          style: { color: "white" }
+        }}
+        InputLabelProps={{
+          style: { color: "white" }
+        }}
+        sx={{
+          "& .MuiOutlinedInput-root": {
+            "& fieldset": {
+              borderColor: "gray", // Default border color
+            },
+            "&.Mui-focused fieldset": {
+              borderColor: "white", // White border when focused
+            },
+          },
+        }}
       />
 
       <Button type="submit" fullWidth variant="contained" disabled={isLoading} sx={{ mt: 3, mb: 2 }}>
@@ -86,4 +150,3 @@ export default function SignupForm() {
     </Box>
   )
 }
-

@@ -10,13 +10,13 @@ export default async function SignupPage() {
   }
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gray-50">
+    <div className="flex min-h-screen items-center justify-center bg-black">
       <div className="w-full max-w-md">
-        <h1 className="mb-8 text-center text-3xl font-bold">Create an Account</h1>
+        <h1 className="mb-8 text-center text-3xl text-white font-bold">Create an Account</h1>
         <SignupForm />
-        <p className="mt-4 text-center text-sm text-gray-600">
+        <p className="mt-4 text-center text-sm text-white">
           Already have an account?{" "}
-          <a href="/" className="font-medium text-blue-600 hover:text-blue-500">
+          <a href="/" className="font-medium text-gray-50 hover:text-white">
             Log in
           </a>
         </p>
