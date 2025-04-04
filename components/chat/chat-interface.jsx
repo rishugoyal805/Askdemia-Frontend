@@ -81,7 +81,7 @@ const Chat = ({ user }) => {
         <div className="header-right">
           <button onClick={clearChat} className="clear-chat"><FaTrash suppressHydrationWarning/></button>
           <div className="user-menu">
-            <FaUserCircle className="user-icon" onClick={() => setShowMenu(!showMenu)} />
+            <FaUserCircle className="user-icon" onClick={() => setShowMenu(!showMenu)} suppressHydrationWarning/>
             {showMenu && (
               <div className="dropdown-menu">
                 <span className="user-id">{user?.email || "No Email"}</span>
