@@ -9,22 +9,58 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { logout } from "@/app/actions/auth";
 
+// ✅ Move Header outside
+const Header = ({ user, theme, toggleTheme, clearChat, handleLogout, showMenu, setShowMenu }) => {
+  return (
+    <div className="chat-header">
+      <TbMessageChatbotFilled suppressHydrationWarning /> &nbsp;&nbsp;Study Helper
+      <div className="header-right">
+        <button onClick={clearChat} className="clear-chat"><FaTrash suppressHydrationWarning /></button>
+        <button onClick={toggleTheme} className="theme-toggle">
+          {theme === "dark" ? "🌞" : "🌙"}
+        </button>
+        <div className="user-menu">
+          <FaUserCircle className="user-icon" onClick={() => setShowMenu(!showMenu)} suppressHydrationWarning />
+          {showMenu && (
+            <div className="dropdown-menu">
+              <span className="user-id">{user?.email || "No Email"}</span>
+              <button onClick={handleLogout} className="dropdown-item">
+                <FaSignOutAlt /> Logout
+              </button>
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const Chat = ({ user }) => {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
+  const [theme, setTheme] = useState("light");
   const messagesEndRef = useRef(null);
 
   useEffect(() => {
-    if (user?.email) {
-      fetchChatHistory();
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme) {
+      setTheme(savedTheme);
+      document.documentElement.classList.toggle("dark", savedTheme === "dark");
     }
-  }, [user]);
+  }, []);
+
+  const toggleTheme = () => {
+    const newTheme = theme === "light" ? "dark" : "light";
+    setTheme(newTheme);
+    document.documentElement.classList.toggle("dark", newTheme === "dark");
+    localStorage.setItem("theme", newTheme);
+  };
 
   const fetchChatHistory = async () => {
     try {
-      const response = await axios.get(`http://127.0.0.1:8000/chat/history/${user.email}`);
+      const response = await axios.get(`https://askdemia.onrender.com/chat/history/${user.email}`);
       if (response.data && response.data.messages) {
         setMessages(response.data.messages);
       }
@@ -32,6 +68,12 @@ const Chat = ({ user }) => {
       console.error("Error fetching chat history:", error);
     }
   };
+
+  useEffect(() => {
+    if (user?.email) {
+      fetchChatHistory();
+    }
+  }, [user]);
 
   const sendMessage = async () => {
     if (!input.trim() || !user?.email) return;
@@ -42,7 +84,7 @@ const Chat = ({ user }) => {
     setLoading(true);
 
     try {
-      const response = await axios.post("http://127.0.0.1:8000/chat", {
+      const response = await axios.post("https://askdemia.onrender.com/chat", {
         user_id: user.email,
         message: input,
       });
@@ -63,7 +105,20 @@ const Chat = ({ user }) => {
   const handleCopy = (text) => navigator.clipboard.writeText(text);
   const sendToWhatsApp = (text) => window.open(`https://wa.me/?text=${encodeURIComponent(text)}`);
   const sendToGmail = (text) => window.open(`mailto:?subject=Chat Response&body=${encodeURIComponent(text)}`);
-  const clearChat = () => setMessages([]);
+
+  const clearChat = async () => {
+    if (!user?.email) return;
+
+    const confirmClear = window.confirm("Are you sure you want to delete all chat history?");
+    if (!confirmClear) return;
+
+    try {
+      await axios.delete(`https://askdemia.onrender.com/chat/history/${user.email}`);
+      setMessages([]);
+    } catch (error) {
+      console.error("Failed to delete chat history:", error);
+    }
+  };
 
   const handleLogout = async () => {
     await logout();
@@ -76,23 +131,15 @@ const Chat = ({ user }) => {
 
   return (
     <div className="chat-container">
-      <div className="chat-header">
-        <TbMessageChatbotFilled suppressHydrationWarning/> &nbsp;&nbsp;Study Helper
-        <div className="header-right">
-          <button onClick={clearChat} className="clear-chat"><FaTrash suppressHydrationWarning/></button>
-          <div className="user-menu">
-            <FaUserCircle className="user-icon" onClick={() => setShowMenu(!showMenu)} suppressHydrationWarning/>
-            {showMenu && (
-              <div className="dropdown-menu">
-                <span className="user-id">{user?.email || "No Email"}</span>
-                <button onClick={handleLogout} className="dropdown-item">
-                  <FaSignOutAlt /> Logout
-                </button>
-              </div>
-            )}
-          </div>
-        </div>
-      </div>
+      <Header
+        user={user}
+        theme={theme}
+        toggleTheme={toggleTheme}
+        clearChat={clearChat}
+        handleLogout={handleLogout}
+        showMenu={showMenu}
+        setShowMenu={setShowMenu}
+      />
       <div className="messages-container">
         {messages.map((msg, index) => (
           <div key={index} className={`message ${msg.role === "user" ? "user-message" : "bot-message"}`}>
