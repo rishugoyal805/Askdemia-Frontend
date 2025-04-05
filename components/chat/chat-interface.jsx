@@ -14,7 +14,7 @@ const Header = ({ user, theme, toggleTheme, clearChat, handleLogout, showMenu, s
   return (
     <div className="chat-header">
       <TbMessageChatbotFilled suppressHydrationWarning /> &nbsp;&nbsp;Study Helper
-      <div className="header-right">
+      <div className="header-right"> 
         <button onClick={clearChat} className="clear-chat"><FaTrash suppressHydrationWarning /></button>
         <button onClick={toggleTheme} className="theme-toggle">
           {theme === "dark" ? "🌞" : "🌙"}
