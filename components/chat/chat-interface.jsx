@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
-import "./Chat.css";
+import "./chat.css";
 import { TbMessageChatbotFilled } from "react-icons/tb";
 import { FaCopy, FaWhatsapp, FaEnvelope, FaSignOutAlt, FaUserCircle, FaTrash } from "react-icons/fa";
 import ReactMarkdown from "react-markdown";
