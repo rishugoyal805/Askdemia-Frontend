@@ -104,7 +104,15 @@ const Chat = ({ user }) => {
 
   const handleCopy = (text) => navigator.clipboard.writeText(text);
   const sendToWhatsApp = (text) => window.open(`https://wa.me/?text=${encodeURIComponent(text)}`);
-  const sendToGmail = (text) => window.open(`mailto:?subject=Chat Response&body=${encodeURIComponent(text)}`);
+  const sendToGmail = (text) => {
+  const subject = encodeURIComponent("chatAI");
+  const body = encodeURIComponent(text);
+
+  const gmailUrl = `https://mail.google.com/mail/u/0/?fs=1&to=&su=${subject}&body=${body}&tf=cm`;
+
+  window.open(gmailUrl, "_blank");
+};
+
 
   const clearChat = async () => {
     if (!user?.email) return;
