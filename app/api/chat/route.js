@@ -3,8 +3,8 @@ import { getSession } from "@/lib/auth"
 import { connectToDatabase } from "@/lib/mongodb"
 import { NextResponse } from "next/server"
 
-// Allow streaming responses up to 90 seconds
-export const maxDuration = 90
+// Allow streaming responses up to less than 60 seconds
+export const maxDuration = 59
 
 export async function POST(req) {
   try {
