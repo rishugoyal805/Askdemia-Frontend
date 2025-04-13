@@ -1,13 +1,13 @@
 :root {
   --text: #000000;
-  --background: #FAF1E6;
-  --head: #CBD5E0;
+  --background: #f7f7f7;
+  --head: #ffffff;
   --menu: #ffffff;
-  --bot-mes: #E0E7FF;
+  --bot-mes: #e0e0e0;
   --input-bg: #ffffff;
   --input-text: #000000;
-  --user-msg-bg: #B2F5EA;
-  --user-msg-color: #000000;
+  --user-msg-bg: #0078ff;
+  --user-msg-color: #ffffff;
   --highlight: #ffb86c;
 }
 
@@ -213,7 +213,6 @@ html, body {
 }
 
 .chat-input {
-  font-family: 'Inter', sans-serif;
   flex: 1;
   padding: 6px 16px;
   height: 43px;
