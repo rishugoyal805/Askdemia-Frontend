@@ -12,7 +12,7 @@ export default async function Home() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-black">
       <div className="w-full max-w-md">
-        <h1 className="mb-8 text-center text-white text-3xl font-bold">Welcome to AI Chatbot</h1>
+        <h1 className="mb-8 text-center text-white text-3xl font-bold">Welcome to Askdemia</h1>
         <LoginForm />
         <p className="mt-4 text-center text-sm text-white">
           Don't have an account?{" "}
