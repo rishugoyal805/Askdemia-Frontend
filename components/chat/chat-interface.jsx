@@ -8,22 +8,47 @@ import { FaCopy, FaWhatsapp, FaEnvelope, FaSignOutAlt, FaUserCircle, FaTrash } f
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { logout } from "@/app/actions/auth";
+import { HiOutlineLightBulb } from "react-icons/hi";
 
 // ✅ Move Header outside
 const Header = ({ user, theme, toggleTheme, clearChat, handleLogout, showMenu, setShowMenu }) => {
+  const menuRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (menuRef.current && !menuRef.current.contains(e.target)) {
+        setShowMenu(false);
+      }
+    };
+
+    if (showMenu) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [showMenu, setShowMenu]);
+
   return (
     <div className="chat-header">
-      <TbMessageChatbotFilled suppressHydrationWarning /> &nbsp;&nbsp;Study Helper
-      <div className="header-right"> 
+      <div className="header-left">
+        <HiOutlineLightBulb className="logo" /><span className="logo-name">Askdemia</span>
+      </div>
+      <div className="header-right">
         <button onClick={clearChat} className="clear-chat"><FaTrash suppressHydrationWarning /></button>
         <button onClick={toggleTheme} className="theme-toggle">
-          {theme === "dark" ? "🌞" : "🌙"}
+          {theme === "dark" ?  "🌙":"🌞"}
         </button>
-        <div className="user-menu">
+        <div className="user-menu" ref={menuRef}>
           <FaUserCircle className="user-icon" onClick={() => setShowMenu(!showMenu)} suppressHydrationWarning />
           {showMenu && (
             <div className="dropdown-menu">
               <span className="user-id">{user?.email || "No Email"}</span>
+
+              <hr />
               <button onClick={handleLogout} className="dropdown-item">
                 <FaSignOutAlt /> Logout
               </button>
@@ -105,13 +130,13 @@ const Chat = ({ user }) => {
   const handleCopy = (text) => navigator.clipboard.writeText(text);
   const sendToWhatsApp = (text) => window.open(`https://wa.me/?text=${encodeURIComponent(text)}`);
   const sendToGmail = (text) => {
-  const subject = encodeURIComponent("chatAI");
-  const body = encodeURIComponent(text);
+    const subject = encodeURIComponent("chatAI");
+    const body = encodeURIComponent(text);
 
-  const gmailUrl = `https://mail.google.com/mail/u/0/?fs=1&to=&su=${subject}&body=${body}&tf=cm`;
+    const gmailUrl = `https://mail.google.com/mail/u/0/?fs=1&to=&su=${subject}&body=${body}&tf=cm`;
 
-  window.open(gmailUrl, "_blank");
-};
+    window.open(gmailUrl, "_blank");
+  };
 
 
   const clearChat = async () => {
@@ -155,7 +180,67 @@ const Chat = ({ user }) => {
               <span className="message-sender">{msg.role === "user" ? "You" : "Bot"}:</span>
               {msg.role === "bot" ? (
                 <>
-                  <ReactMarkdown remarkPlugins={[remarkGfm]}>{msg.text}</ReactMarkdown>
+                  {/* <ReactMarkdown remarkPlugins={[remarkGfm]}>{msg.text}</ReactMarkdown>
+                   */}
+                  <div className="markdown-content">
+                    <ReactMarkdown
+                      remarkPlugins={[remarkGfm]}
+                      components={{
+                        p: ({ children }) => <p>{children}</p>,
+                        a: ({ href, children }) => (
+                          <a href={href} style={{ color: '#6cf', textDecoration: 'underline' }}>{children}</a>
+                        ),
+                        li: ({ children }) => <li>{children}</li>,
+                        code: ({ inline, children }) =>
+                          inline ? (
+                            <code style={{ backgroundColor: '#333', padding: '2px 6px', borderRadius: '4px' }}>{children}</code>
+                          ) : (
+                            <div style={{ position: 'relative', marginBottom: '1rem' }}>
+                              <pre style={{ backgroundColor: 'var(--background)', padding: '12px', borderRadius: '6px', overflowX: 'auto' }}>
+                                <code>{children}</code>
+                              </pre>
+                              <div style={{ position: 'absolute', top: 6, right: 8, display: 'flex', gap: '8px' }}>
+                                <button
+                                  onClick={() => handleCopy(children)}
+                                  title="Copy"
+                                  className="action-button"
+                                  style={{ background: 'none', border: 'none',  cursor: 'pointer' }}
+                                >
+                                  <FaCopy />
+                                </button>
+                                <button
+                                  onClick={() => sendToWhatsApp(children)}
+                                  title="Share via WhatsApp"
+                                  className="action-button"
+                                  style={{ background: 'none', border: 'none', cursor: 'pointer' }}
+                                >
+                                  <FaWhatsapp />
+                                </button>
+                                <button
+                                  onClick={() => sendToGmail(children)}
+                                  title="Send via Email"
+                                  className="action-button"
+                                  style={{ background: 'none', border: 'none', cursor: 'pointer' }}
+                                >
+                                  <FaEnvelope />
+                                </button>
+                                <br/>
+                                <br/>
+                              </div>
+                            </div>
+                          ),
+                        table: ({ children }) => <table>{children}</table>,
+                        thead: ({ children }) => <thead>{children}</thead>,
+                        tbody: ({ children }) => <tbody>{children}</tbody>,
+                        tr: ({ children }) => <tr>{children}</tr>,
+                        th: ({ children }) => <th>{children}</th>,
+                        td: ({ children }) => <td>{children}</td>,
+                      }}
+                    >
+                      {msg.text}
+                    </ReactMarkdown>
+                  </div>
+
                   <div className="message-actions">
                     <button className="action-button" onClick={() => handleCopy(msg.text)} title="Copy">
                       <FaCopy />
