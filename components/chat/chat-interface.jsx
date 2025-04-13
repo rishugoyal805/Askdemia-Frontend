@@ -85,7 +85,7 @@ const Chat = ({ user }) => {
 
   const fetchChatHistory = async () => {
     try {
-      const response = await axios.get(`https://askdemiaaa.onrender.com/chat/history/${user.email}`);
+      const response = await axios.get(`https://askdemia.onrender.com/chat/history/${user.email}`);
       if (response.data && response.data.messages) {
         setMessages(response.data.messages);
       }
@@ -109,7 +109,7 @@ const Chat = ({ user }) => {
     setLoading(true);
 
     try {
-      const response = await axios.post("https://askdemiaaa.onrender.com/chat", {
+      const response = await axios.post("https://askdemia.onrender.com/chat", {
         user_id: user.email,
         message: input,
       });
@@ -146,7 +146,7 @@ const Chat = ({ user }) => {
     if (!confirmClear) return;
 
     try {
-      await axios.delete(`https://askdemiaaa.onrender.com/chat/history/${user.email}`);
+      await axios.delete(`https://askdemia.onrender.com/chat/history/${user.email}`);
       setMessages([]);
     } catch (error) {
       console.error("Failed to delete chat history:", error);
