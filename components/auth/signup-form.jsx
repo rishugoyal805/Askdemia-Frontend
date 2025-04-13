@@ -49,32 +49,49 @@ export default function SignupForm() {
   }
 
   return (
-    <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
+    <Box
+      component="form"
+      onSubmit={handleSubmit}
+      noValidate
+      sx={{
+        mt: 1,
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center", // center children
+      }}
+    >
       {error && (
-        <Alert severity="error" sx={{ mb: 2 }}>
-          {error}
-        </Alert>
+        <Box sx={{ width: "100%", "@media (max-width: 520px)": { width: "90%", mx: "auto" } }}>
+          <Alert severity="error" sx={{ mb: 2 }}>
+            {error}
+          </Alert>
+        </Box>
       )}
 
-      <TextField margin="normal" required fullWidth id="fullName" label="Full Name" name="fullName" autoFocus
-      InputProps={{
-        style: { color: "white" }
-      }}
-      InputLabelProps={{
-        style: { color: "white" }
-      }} 
-      sx={{
-        "& .MuiOutlinedInput-root": {
-          "& fieldset": {
-            borderColor: "gray", // Default border color
+      <TextField   suppressHydrationWarning
+        margin="normal"
+        required
+        fullWidth
+        id="fullName"
+        label="Full Name"
+        name="fullName"
+        autoFocus
+        InputProps={{ style: { color: "white" } }}
+        InputLabelProps={{ style: { color: "white" } }}
+        sx={{
+          width: "100%",
+          "@media (max-width: 520px)": {
+            width: "90%",
+            mx: "auto",
           },
-          "&.Mui-focused fieldset": {
-            borderColor: "white", // White border when focused
+          "& .MuiOutlinedInput-root": {
+            "& fieldset": { borderColor: "gray" },
+            "&.Mui-focused fieldset": { borderColor: "white" },
           },
-        },
-      }}/>
+        }}
+      />
 
-      <TextField
+      <TextField   suppressHydrationWarning
         margin="normal"
         required
         fullWidth
@@ -82,43 +99,45 @@ export default function SignupForm() {
         label="Email Address"
         name="email"
         autoComplete="email"
-        InputProps={{
-          style: { color: "white" }
-        }}
-        InputLabelProps={{
-          style: { color: "white" }
-        }}
+        InputProps={{ style: { color: "white" } }}
+        InputLabelProps={{ style: { color: "white" } }}
         sx={{
+          width: "100%",
+          "@media (max-width: 520px)": {
+            width: "90%",
+            mx: "auto",
+          },
           "& .MuiOutlinedInput-root": {
-            "& fieldset": {
-              borderColor: "gray", // Default border color
-            },
-            "&.Mui-focused fieldset": {
-              borderColor: "white", // White border when focused
-            },
+            "& fieldset": { borderColor: "gray" },
+            "&.Mui-focused fieldset": { borderColor: "white" },
           },
         }}
       />
 
-      <TextField margin="normal" required fullWidth name="password" label="Password" type="password" id="password"
-      InputProps={{
-        style: { color: "white" }
-      }}
-      InputLabelProps={{
-        style: { color: "white" }
-      }}
-      sx={{
-        "& .MuiOutlinedInput-root": {
-          "& fieldset": {
-            borderColor: "gray", // Default border color
+      <TextField    suppressHydrationWarning
+        margin="normal"
+        required
+        fullWidth
+        name="password"
+        label="Password"
+        type="password"
+        id="password"
+        InputProps={{ style: { color: "white" } }}
+        InputLabelProps={{ style: { color: "white" } }}
+        sx={{
+          width: "100%",
+          "@media (max-width: 520px)": {
+            width: "90%",
+            mx: "auto",
           },
-          "&.Mui-focused fieldset": {
-            borderColor: "white", // White border when focused
+          "& .MuiOutlinedInput-root": {
+            "& fieldset": { borderColor: "gray" },
+            "&.Mui-focused fieldset": { borderColor: "white" },
           },
-        },
-      }} />
+        }}
+      />
 
-      <TextField
+      <TextField   suppressHydrationWarning
         margin="normal"
         required
         fullWidth
@@ -126,25 +145,36 @@ export default function SignupForm() {
         label="Confirm Password"
         type="password"
         id="confirmPassword"
-        InputProps={{
-          style: { color: "white" }
-        }}
-        InputLabelProps={{
-          style: { color: "white" }
-        }}
+        InputProps={{ style: { color: "white" } }}
+        InputLabelProps={{ style: { color: "white" } }}
         sx={{
+          width: "100%",
+          "@media (max-width: 520px)": {
+            width: "90%",
+            mx: "auto",
+          },
           "& .MuiOutlinedInput-root": {
-            "& fieldset": {
-              borderColor: "gray", // Default border color
-            },
-            "&.Mui-focused fieldset": {
-              borderColor: "white", // White border when focused
-            },
+            "& fieldset": { borderColor: "gray" },
+            "&.Mui-focused fieldset": { borderColor: "white" },
           },
         }}
       />
 
-      <Button type="submit" fullWidth variant="contained" disabled={isLoading} sx={{ mt: 3, mb: 2 }}>
+      <Button
+        type="submit"
+        fullWidth
+        variant="contained"
+        disabled={isLoading}
+        sx={{
+          mt: 3,
+          mb: 2,
+          width: "100%",
+          "@media (max-width: 520px)": {
+            width: "90%",
+            mx: "auto",
+          },
+        }}
+      >
         {isLoading ? <CircularProgress size={24} /> : "Sign Up"}
       </Button>
     </Box>
