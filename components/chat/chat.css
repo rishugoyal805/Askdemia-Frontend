@@ -202,6 +202,7 @@ html, body {
 }
 
 .chat-input-area {
+  position: sticky;
   display: flex;
   align-items: center;
   padding: 12px;
