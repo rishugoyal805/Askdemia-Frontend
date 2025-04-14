@@ -181,7 +181,10 @@ hr {
   background-color: var(--user-msg-bg);
   color: var(--user-msg-color);
   border-radius: 15px 15px 0 15px;
-  margin-top: 47px;
+}
+
+.first-user-message {
+  margin-top: 13dvh;
 }
 
 .bot-message {
@@ -267,10 +270,17 @@ hr {
   font-family: 'Poppins', sans-serif;
 }
 
+.chat-input-area.no-messages {
+  bottom: 60px;
+}
+
+.chat-input-area.with-messages {
+  bottom: 0;
+}
+
 .chat-input:focus {
   border: 1px solid var(--highlight);
 }
-
 
 .send-button {
   margin-left: 10px;
@@ -479,9 +489,7 @@ hr {
   .logo-name{
     font-size: 18px;
   }
-  /* .chat-input-area{
-    bottom: 60px;
-  } */
+  
 }
 
 @media (max-width: 330px) {
