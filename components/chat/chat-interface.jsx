@@ -40,7 +40,7 @@ const Header = ({ user, theme, toggleTheme, clearChat, handleLogout, showMenu, s
       <div className="header-right">
         <button onClick={clearChat} className="clear-chat"><FaTrash suppressHydrationWarning /></button>
         <button onClick={toggleTheme} className="theme-toggle">
-          {theme === "dark" ?  "🌙":"🌞"}
+          {theme === "dark" ? "🌙" : "🌞"}
         </button>
         <div className="user-menu" ref={menuRef}>
           <FaUserCircle className="user-icon" onClick={() => setShowMenu(!showMenu)} suppressHydrationWarning />
@@ -175,7 +175,13 @@ const Chat = ({ user }) => {
       />
       <div className="messages-container">
         {messages.map((msg, index) => (
-          <div key={index} className={`message ${msg.role === "user" ? "user-message" : "bot-message"}`}>
+          <div
+            key={index}
+            className={`message ${msg.role === "user"
+                ? `user-message ${messages.findIndex(m => m.role === "user") === index ? "first-user-message" : ""}`
+                : "bot-message"
+              }`}
+          >
             <div className="message-content">
               <span className="message-sender">{msg.role === "user" ? "You" : "Bot"}:</span>
               {msg.role === "bot" ? (
@@ -204,7 +210,7 @@ const Chat = ({ user }) => {
                                   onClick={() => handleCopy(children)}
                                   title="Copy"
                                   className="action-button"
-                                  style={{ background: 'none', border: 'none',  cursor: 'pointer' }}
+                                  style={{ background: 'none', border: 'none', cursor: 'pointer' }}
                                 >
                                   <FaCopy />
                                 </button>
@@ -224,8 +230,8 @@ const Chat = ({ user }) => {
                                 >
                                   <FaEnvelope />
                                 </button>
-                                <br/>
-                                <br/>
+                                <br />
+                                <br />
                               </div>
                             </div>
                           ),
@@ -262,7 +268,7 @@ const Chat = ({ user }) => {
         <div ref={messagesEndRef} />
         {loading && <div className="loading-spinner"><div className="spinner"></div></div>}
       </div>
-      <div className="chat-input-area">
+      <div className={`chat-input-area ${messages.length === 0 ? "no-messages" : "with-messages"}`}>
         <textarea
           className="chat-input"
           value={input}
