@@ -479,9 +479,9 @@ hr {
   .logo-name{
     font-size: 18px;
   }
-  .chat-input-area{
+  /* .chat-input-area{
     bottom: 60px;
-  }
+  } */
 }
 
 @media (max-width: 330px) {
