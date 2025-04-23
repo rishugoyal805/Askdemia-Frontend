@@ -7,7 +7,7 @@
 - 🤖 Powered by CrewAI and multi-agent architecture  
 - 💬 Conversational academic assistant  
 - 📅 Smart schedule management  
-- 📚 Academic Q&A for student support  
+- 📚 Academic Q&A for student support    
 - ✅ Personalized work plans and productivity insights  
 
 ## 🛠️ Tech Stack
