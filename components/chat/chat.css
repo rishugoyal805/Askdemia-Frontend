@@ -58,22 +58,20 @@ body {
 
 .chat-container {
   width: 97vw;
-  height: 100%;
+  height: 100vh;
   background: var(--background);
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  position: relative;
 }
 
 .chat-header {
   background: var(--head);
   color: var(--text);
   width: 97vw;
-  padding: 15px;
-  padding-left: 25px;
-  padding-right: 25px;
+  padding: 15px 25px;
   font-size: 20px;
   font-weight: bold;
   border-radius: 10px 10px 0 0;
@@ -167,9 +165,12 @@ hr {
   flex: 1;
   padding: 15px;
   overflow-y: auto;
+  margin-top: 60px; /* Add space for fixed header */
+  margin-bottom: 75px; /* Add space for input area */
   display: flex;
   flex-direction: column;
   scroll-behavior: smooth;
+  height: calc(100vh - 135px); /* Subtract header and input area heights */
 }
 
 /* Message Box */
@@ -244,8 +245,9 @@ hr {
 }
 
 .chat-input-area {
-  position: sticky;
+  position: fixed;
   bottom: 0;
+  width: 97vw;
   z-index: 10;
   display: flex;
   align-items: center;
@@ -257,7 +259,6 @@ hr {
   border-bottom-right-radius: 10px;
   font-family: 'Poppins', sans-serif;
 }
-
 
 .chat-input {
   flex: 1;

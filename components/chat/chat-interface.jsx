@@ -155,7 +155,7 @@ const Chat = ({ user }) => {
 
   const handleLogout = async () => {
     await logout();
-    window.location.href = "/";
+    window.location.href = "/login";
   };
 
   useEffect(() => {

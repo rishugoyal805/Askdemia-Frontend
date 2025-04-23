@@ -46,11 +46,9 @@ export default function LoginForm() {
       backgroundColor: "rgba(255, 255, 255, 0.05)",
       display: "flex",
       flexDirection: "column",
-      alignItems: "center", // ⬅️ Center children horizontally
-  
-    
-      mt: 1,
-      backgroundColor: "rgba(255, 255, 255, 0.05)"
+      alignItems: "center",
+      padding: "2rem",
+      borderRadius: "8px"
     }}>
       {error && (
         <Box sx={{ width: "100%", "@media (max-width: 520px)": { width: "90%", mx: "auto" } }}>
@@ -60,8 +58,7 @@ export default function LoginForm() {
         </Box>
       )}
 
-
-      <TextField   suppressHydrationWarning
+      <TextField suppressHydrationWarning
         margin="normal"
         required
         fullWidth
@@ -77,10 +74,10 @@ export default function LoginForm() {
           style: { color: "white" }
         }}
         sx={{
-          width: "100%", // Default full width
+          width: "100%",
           "@media (max-width: 520px)": {
             width: "90%",
-            mx: "auto", // center horizontally
+            mx: "auto",
           },
           "& .MuiOutlinedInput-root": {
             "& fieldset": {
@@ -90,19 +87,10 @@ export default function LoginForm() {
               borderColor: "white",
             },
           },
-        
-        
-          "& .MuiOutlinedInput-root": {
-            "& fieldset": {
-              borderColor: "gray", // Default border color
-            },
-            "&.Mui-focused fieldset": {
-              borderColor: "white", // White border when focused
-            },
-          },
-        }} />
+        }}
+      />
 
-      <TextField   suppressHydrationWarning
+      <TextField suppressHydrationWarning
         margin="normal"
         required
         fullWidth
@@ -118,10 +106,10 @@ export default function LoginForm() {
           style: { color: "white" }
         }}
         sx={{
-          width: "100%", // Default full width
+          width: "100%",
           "@media (max-width: 520px)": {
             width: "90%",
-            mx: "auto", // center horizontally
+            mx: "auto",
           },
           "& .MuiOutlinedInput-root": {
             "& fieldset": {
@@ -131,29 +119,24 @@ export default function LoginForm() {
               borderColor: "white",
             },
           },
-                
-          "& .MuiOutlinedInput-root": {
-            "& fieldset": {
-              borderColor: "gray", // Default border color
-            },
-            "&.Mui-focused fieldset": {
-              borderColor: "white", // White border when focused
-            },
-          },
         }}
       />
 
-      <Button type="submit" fullWidth variant="contained" disabled={isLoading} sx={{
-        mt: 3,
-        mb: 2,
-        width: "100%",
-        "@media (max-width: 520px)": {
-          width: "90%",
-          mx: "auto",
-        },
-
-        mt: 3, mb: 2
-      }} >
+      <Button
+        type="submit"
+        fullWidth
+        variant="contained"
+        disabled={isLoading}
+        sx={{
+          mt: 3,
+          mb: 2,
+          width: "100%",
+          "@media (max-width: 520px)": {
+            width: "90%",
+            mx: "auto",
+          },
+        }}
+      >
         {isLoading ? <CircularProgress size={24} /> : "Sign In"}
       </Button>
     </Box>

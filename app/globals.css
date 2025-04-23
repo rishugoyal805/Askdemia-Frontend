@@ -16,13 +16,19 @@
   }
 }
 
+html, body {
+  height: auto;
+  min-height: 100vh;
+  width: 100%;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
   margin: 0;
   padding: 0;
-  height: 100vh;
-  overflow: hidden;
+  overflow-y: auto !important;
+  overflow-x: hidden;
 }
 
 .logo-login {
@@ -33,7 +39,6 @@ body {
   border-radius: 50%;
   margin: 0 auto;
 }
-
 
 @keyframes fadeIn {
   from {
