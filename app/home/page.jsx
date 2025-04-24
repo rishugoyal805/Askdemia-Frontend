@@ -1,5 +1,6 @@
 import { redirect } from "next/navigation"
 import { getSession } from "@/lib/auth"
+import { HiOutlineLightBulb } from "react-icons/hi"
 import Image from "next/image"
 
 export default async function HomePage() {
@@ -10,7 +11,7 @@ export default async function HomePage() {
       {/* Header with Logo */}
       <nav className="sticky top-0 z-50 p-4 flex justify-between items-center border-b border-gray-800 bg-black">
         <div className="flex items-center space-x-4">
-          <img className="h-12" src="/logo.jpg" alt="Askdemia Logo" />
+          <HiOutlineLightBulb className="h-8 w-8" />
           <span className="text-2xl font-bold">Askdemia</span>
         </div>
         <div>
@@ -33,14 +34,11 @@ export default async function HomePage() {
 
       <main className="container mx-auto px-4 py-8">
         <div className="max-w-4xl mx-auto">
-          {/* Hero Section with Logo Image */}
+          {/* Hero Section with Logo Icon */}
           <div className="text-center mb-16">
-            <div className="relative w-full max-w-md mx-auto h-[300px] mb-12 rounded-xl overflow-hidden">
-              <img
-                src="/logo.jpg"
-                alt="Askdemia Logo"
-                className="object-contain w-full h-full"
-              />
+            <div className="flex flex-col items-center justify-center mb-12">
+              <HiOutlineLightBulb className="h-32 w-32 mb-4" />
+              <span className="text-4xl font-bold">Askdemia</span>
             </div>
             <h1 className="text-5xl font-bold mb-8">Welcome to Askdemia</h1>
             <p className="text-xl mb-8">Your AI-Powered Study Companion 🎓🤖</p>
