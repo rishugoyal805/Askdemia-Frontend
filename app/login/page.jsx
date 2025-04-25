@@ -21,7 +21,7 @@ export default async function LoginPage() {
         <LoginForm />
         <p className="mt-4 text-center text-sm text-white">
           Don't have an account?{" "}
-          <a href="/signup" className="font-medium text-white hover:text-gray-50">
+          <a href="/signup" className="font-medium text-gray-50 hover:text-white">
             Sign up
           </a>
         </p>
