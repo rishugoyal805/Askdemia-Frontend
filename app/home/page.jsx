@@ -16,7 +16,7 @@ export default async function HomePage() {
         </div>
         <div>
           {session ? (
-            <a href="/chat" className="px-6 py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg hover:from-blue-600 hover:to-purple-700">
+            <a href="/chat" className="no-underline px-6 py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg hover:from-blue-600 hover:to-purple-700">
               Go to Chat
             </a>
           ) : (
