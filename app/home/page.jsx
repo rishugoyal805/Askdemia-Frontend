@@ -21,10 +21,10 @@ export default async function HomePage() {
             </a>
           ) : (
             <div className="space-x-6">
-              <a href="/login" className="px-5 py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg hover:from-blue-600 hover:to-purple-700">
+              <a href="/login" className="no-underline px-5 py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg hover:from-blue-600 hover:to-purple-700">
                 Login
               </a>
-              <a href="/signup" className="px-5 py-2 bg-gradient-to-br from-purple-600 to-blue-500 text-white rounded-full font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg hover:from-purple-700 hover:to-blue-600">
+              <a href="/signup" className="no-underline px-5 py-2 bg-gradient-to-br from-purple-600 to-blue-500 text-white rounded-full font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg hover:from-purple-700 hover:to-blue-600">
                 Sign up
               </a>
             </div>
@@ -46,7 +46,7 @@ export default async function HomePage() {
               {!session && (
                 <a
                   href="/login"
-                  className="px-8 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg hover:from-blue-600 hover:to-purple-700"
+                  className="no-underline px-8 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg hover:from-blue-600 hover:to-purple-700"
                 >
                   Get Started
                 </a>
@@ -54,7 +54,7 @@ export default async function HomePage() {
               {session && (
                 <a
                   href="/chat"
-                  className="px-8 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg hover:from-blue-600 hover:to-purple-700"
+                  className="no-underline px-8 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg hover:from-blue-600 hover:to-purple-700"
                 >
                   Go to Chat
                 </a>
