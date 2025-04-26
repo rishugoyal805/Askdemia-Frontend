@@ -6,6 +6,10 @@ import Image from "next/image"
 export default async function HomePage() {
   const session = await getSession()
 
+function openGmail(email) {
+    window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=${email}`, '_blank');
+
+
   return (
     <div className="min-h-screen bg-black text-white relative">
       {/* Header with Logo */}
@@ -106,7 +110,63 @@ export default async function HomePage() {
                 Swayam Gupta (B9)<br />
                 Rishu Goyal (B9)
               </p>
-            </div>
+              <footer class="bg-gray-900 text-white py-10 px-4">
+  <div class="max-w-7xl mx-auto">
+    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      <!-- Profile 1 -->
+      <div class="flex gap-4 items-start">
+        <img src="./profile.jpg" alt="Profile Image 1" class="w-16 h-16 rounded-full object-cover">
+        <div>
+          <h4 class="text-lg font-semibold">Swayam Gupta</h4>
+          <p>Email: 
+            <a href="#" onclick="openGmail('swayamsam2005@gmail.com'); return false;" class="text-blue-400 hover:underline">E-mail</a>
+          </p>
+          <ul class="mt-2 space-y-1">
+            <li><a href="https://www.linkedin.com/in/swayamgupta12" target="_blank" class="hover:text-blue-300">LinkedIn</a></li>
+            <li><a href="https://github.com/SwayamGupta12345" target="_blank" class="hover:text-blue-300">GitHub</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Profile 2 -->
+      <div class="flex gap-4 items-start">
+        <img src="profile1.jpg" alt="Profile Image 2" class="w-16 h-16 rounded-full object-cover">
+        <div>
+          <h4 class="text-lg font-semibold">Rishu Goyal</h4>
+          <p>Email: 
+            <a href="#" onclick="openGmail('rishugoyal16800@gmail.com'); return false;" class="text-blue-400 hover:underline">E-mail</a>
+          </p>
+          <ul class="mt-2 space-y-1">
+            <li><a href="https://www.linkedin.com/in/rishu0405" target="_blank" class="hover:text-blue-300">LinkedIn</a></li>
+            <li><a href="https://github.com/rishugoyal805" target="_blank" class="hover:text-blue-300">GitHub</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Profile 3 -->
+      <div class="flex gap-4 items-start">
+        <img src="devyani_profile.jpg" alt="Profile Image 3" class="w-16 h-16 rounded-full object-cover">
+        <div>
+          <h4 class="text-lg font-semibold">Yashita Gogia</h4>
+          <p>Email: 
+            <a href="#" onclick="openGmail('Yashita Gogia@gmail.com'); return false;" class="text-blue-400 hover:underline">E-mail</a>
+          </p>
+          <ul class="mt-2 space-y-1">
+            <li><a href="https://www.linkedin.com/in/Yashita Gogia" target="_blank" class="hover:text-blue-300">LinkedIn</a></li>
+            <li><a href="https://github.com/Yashita Gogia" target="_blank" class="hover:text-blue-300">GitHub</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="mt-10 border-t border-gray-700 pt-4 text-center text-sm">
+      <p>Made by: Swayam Gupta, Rishu Goyal, Yashita Gogia</p>
+    </div>
+  </div>
+</footer>
+
+           </div>
           </div>
         </div>
       </main>
