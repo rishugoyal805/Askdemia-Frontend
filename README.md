@@ -2,7 +2,7 @@
 
 **Askdemia** is an academic-focused AI assistant built using **CrewAI** and intelligent autonomous agents. Designed to simplify learning and boost productivity, Askdemia helps users manage schedules, get quick answers to academic queries, and organize tasks through a natural, conversational interface.
 
-## 🚀 Features
+## 🚀 Features 
 
 - 🤖 Powered by CrewAI and multi-agent architecture  
 - 💬 Conversational academic assistant  
