@@ -6,24 +6,24 @@ import Image from "next/image"
 export default async function HomePage() {
   const session = await getSession()
   return (
-    <div className="min-h-screen bg-black text-white relative">
+    <div className="min-h-screen bg-black text-white relative text-base sm:text-lg md:text-xl">
       {/* Header with Logo */}
-      <nav className="sticky top-0 z-50 p-4 flex justify-between items-center border-b border-gray-800 bg-black">
-        <div className="flex items-center space-x-4">
-          <HiOutlineLightBulb className="h-8 w-8" />
-          <span className="text-2xl font-bold">Askdemia</span>
+      <nav className="sticky top-0 z-50 p-4 flex justify-between items-center border-b border-gray-800 bg-black backdrop-blur-md">
+        <div className="flex items-center mr-2 sm:mr-0">
+          <HiOutlineLightBulb className="h-6 w-6 sm:h-8 sm:w-8" />
+          <span className="text-xl sm:text-2xl md:text-3xl font-bold">Askdemia</span>
         </div>
         <div>
           {session ? (
-            <a href="/chat" className="no-underline px-6 py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg hover:from-blue-600 hover:to-purple-700">
+            <a href="/chat" className="no-underline px-6 py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg hover:from-blue-600 hover:to-purple-700 text-base sm:text-lg md:text-xl">
               Go to Chat
             </a>
           ) : (
-            <div className="space-x-6">
-              <a href="/login" className="no-underline px-5 py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg hover:from-blue-600 hover:to-purple-700">
+            <div className="flex justify-center space-x-4 sm:space-x-6 overflow-x-auto">
+              <a href="/login" className="no-underline px-3 py-1.5 sm:px-5 sm:py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full font-medium text-sm sm:text-base transition-all duration-300 hover:scale-105 hover:shadow-lg hover:from-blue-600 hover:to-purple-700 whitespace-nowrap text-base sm:text-lg md:text-xl">
                 Login
               </a>
-              <a href="/signup" className="no-underline px-5 py-2 bg-gradient-to-br from-purple-600 to-blue-500 text-white rounded-full font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg hover:from-purple-700 hover:to-blue-600">
+              <a href="/signup" className="no-underline px-3 py-1.5 sm:px-5 sm:py-2 bg-gradient-to-br from-purple-600 to-blue-500 text-white rounded-full font-medium text-sm sm:text-base transition-all duration-300 hover:scale-105 hover:shadow-lg hover:from-purple-700 hover:to-blue-600 whitespace-nowrap text-base sm:text-lg md:text-xl">
                 Sign up
               </a>
             </div>
@@ -39,8 +39,8 @@ export default async function HomePage() {
               <HiOutlineLightBulb className="h-32 w-32 mb-4" />
               <span className="text-4xl font-bold">Askdemia</span>
             </div>
-            <h1 className="text-5xl font-bold mb-8">Welcome to Askdemia</h1>
-            <p className="text-xl mb-8">Your AI-Powered Study Companion 🎓🤖</p>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-8">Welcome to Askdemia</h1>
+            <p className="text-base sm:text-lg md:text-xl mb-8 text-center">Your AI-Powered Study Companion 🎓🤖</p>
             <div className="space-x-4 mb-12">
               {!session && (
                 <a
@@ -63,50 +63,50 @@ export default async function HomePage() {
 
           {/* Description Section */}
           <div className="prose prose-invert max-w-none">
-            <p className="text-lg mb-8">
-              Askdemia is an intelligent student assistant designed to make academic life easier and more productive. 
-              Powered by AI, it helps students clear doubts instantly, manage schedules efficiently, stay motivated, 
-              and grasp tough concepts through interactive learning. Whether you're stuck on a question, feeling unmotivated, 
+          <p className="text-base sm:text-lg md:text-xl mb-8 text-justify">
+              Askdemia is an intelligent student assistant designed to make academic life easier and more productive.
+              Powered by AI, it helps students clear doubts instantly, manage schedules efficiently, stay motivated,
+              and grasp tough concepts through interactive learning. Whether you're stuck on a question, feeling unmotivated,
               or need a quick study plan—Askdemia's got your back with a personalized and always-available set of AI agents.
             </p>
 
             {/* Features Grid */}
             <div className="grid md:grid-cols-2 gap-8 mt-12">
               <div className="bg-gray-900 p-6 rounded-lg transform transition-transform hover:scale-105">
-                <h3 className="text-xl font-bold mb-4">📚 Doubt Solver</h3>
-                <p>Get instant, accurate answers to your academic queries.</p>
+              <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-4">📚 Doubt Solver</h3>
+              <p className="text-sm sm:text-base md:text-lg text-justify">Get instant, accurate answers to your academic queries.</p>
               </div>
-              
+
               <div className="bg-gray-900 p-6 rounded-lg transform transition-transform hover:scale-105">
                 <h3 className="text-xl font-bold mb-4">📅 Smart Scheduler</h3>
                 <p>Plan your study routine and never miss a deadline.</p>
               </div>
-              
+
               <div className="bg-gray-900 p-6 rounded-lg transform transition-transform hover:scale-105">
                 <h3 className="text-xl font-bold mb-4">🌟 Motivator Agent</h3>
                 <p>Daily motivation, quotes, and pep talks when you need them.</p>
               </div>
-              
+
               <div className="bg-gray-900 p-6 rounded-lg transform transition-transform hover:scale-105">
                 <h3 className="text-xl font-bold mb-4">🧠 Teaching Agent</h3>
                 <p>Learn topics through simple, step-by-step explanations.</p>
               </div>
             </div>
 
-            <p className="text-xl font-semibold text-center mt-12 mb-8">
+            <p className="text-lg sm:text-xl md:text-2xl font-semibold text-center mt-12 mb-8">
               Askdemia is not just an app—it's your study buddy for success.
             </p>
 
             {/* Credits */}
             <div className="text-center text-gray-400 mt-16 pb-8">
-              <p className="text-sm">
+            <p className="text-xs sm:text-sm md:text-base">
                 Created by:<br />
                 Yashita Gogia (B11)<br />
                 Swayam Gupta (B9)<br />
                 Rishu Goyal (B9)
               </p>
-             
-           </div>
+
+            </div>
           </div>
         </div>
       </main>
