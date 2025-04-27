@@ -191,7 +191,7 @@ function Footer() {
               className="rounded-full object-cover"
             />
             <div>
-              <h4 className="text-lg font-semibold">Rishu Goyal</h4>
+              <h4 className="text-lg font-semibold">&nbsp;&nbsp;Rishu Goyal</h4>
               <a
                 href="https://mail.google.com/mail/?view=cm&fs=1&to=rishugoyal16800@gmail.com"
                 target="_blank"
