@@ -152,13 +152,12 @@ function Footer() {
               className="rounded-full object-cover"
             />
             <div>
-              <h4 className="text-lg font-semibold">Swayam Gupta</h4>
+              <h4 className="text-lg font-semibold my-3">Swayam Gupta</h4>
               <a
                 href="https://mail.google.com/mail/?view=cm&fs=1&to=swayamsam2005@gmail.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white no-underline mt-1 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl"
-
+                className="text-white no-underline mt-1 text-sm block "
               >
                 Email
               </a>
@@ -166,19 +165,17 @@ function Footer() {
               <a
                 href="https://www.linkedin.com/in/swayamgupta12"
                 target="_blank"
-                rel="noopener noreferrer"
-                className="text-white no-underline mt-1 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl"
-
+                rel="noopener noreferrer" 
+                className="text-white no-underline mt-1 text-sm block "
               >
                 LinkedIn
               </a>
 
-              <a
+              <a  
                 href="https://github.com/SwayamGupta12345"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white no-underline mt-1 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl"
-
+                className="text-white no-underline mt-1 text-sm block "
               >
                 GitHub
               </a>
@@ -194,13 +191,12 @@ function Footer() {
               className="rounded-full object-cover"
             />
             <div>
-              <h4 className="text-lg font-semibold">&nbsp;&nbsp;Rishu Goyal</h4>
+              <h4 className="text-lg font-semibold my-3">&nbsp;&nbsp;Rishu Goyal</h4>
               <a
                 href="https://mail.google.com/mail/?view=cm&fs=1&to=rishugoyal16800@gmail.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white no-underline mt-1 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl"
-
+                className="text-white no-underline mt-1 text-sm block "
               >
                 Email
               </a>
@@ -209,8 +205,7 @@ function Footer() {
                 href="https://www.linkedin.com/in/rishu0405"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white no-underline mt-1 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl"
-
+                className="text-white no-underline mt-1 text-sm block "
               >
                 LinkedIn
               </a>
@@ -219,8 +214,7 @@ function Footer() {
                 href="https://github.com/rishugoyal805"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white no-underline mt-1 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl"
-
+                className="text-white no-underline mt-1 text-sm block "
               >
                 GitHub
               </a>
@@ -236,23 +230,21 @@ function Footer() {
               className="rounded-full object-cover"
             />
             <div>
-              <h4 className="text-lg font-semibold">Yashita Gogia</h4>
+              <h4 className="text-lg font-semibold my-3">Yashita Gogia</h4>
               <a
                 href="https://mail.google.com/mail/?view=cm&fs=1&to=yashita.gogia@gmail.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white no-underline mt-1 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl"
-
+                className="text-white no-underline mt-1 text-sm block "
               >
                 Email
               </a>
 
               <a
-                href="https://www.linkedin.com/in/yashita-gogia-b05043289/"
+                href="https://www.linkedin.com/in/yashita-gogia/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white no-underline mt-1 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl"
-
+                className="text-white no-underline mt-1 text-sm block "
               >
                 LinkedIn
               </a>
@@ -261,8 +253,7 @@ function Footer() {
                 href="https://github.com/yashita7"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white no-underline mt-1 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl"
-
+                className="text-white no-underline mt-1 text-sm block "
               >
                 GitHub
               </a>
