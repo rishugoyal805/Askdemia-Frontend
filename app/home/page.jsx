@@ -147,8 +147,8 @@ function Footer() {
             <Image
               src="/profile.jpg"
               alt="Swayam Gupta Profile"
-              width={64}
-              height={64}
+              width={100}
+              height={100}
               className="rounded-full object-cover"
             />
             <div>
@@ -159,7 +159,7 @@ function Footer() {
                 rel="noopener noreferrer"
                 className="text-white no-underline mt-1 text-sm block"
               >
-                Send Email
+                Email
               </a>
 
               <a
@@ -186,8 +186,8 @@ function Footer() {
             <Image
               src="/profile1.jpg"
               alt="Rishu Goyal Profile"
-              width={64}
-              height={64}
+              width={100}
+              height={100}
               className="rounded-full object-cover"
             />
             <div>
@@ -198,7 +198,7 @@ function Footer() {
                 rel="noopener noreferrer"
                 className="text-white no-underline mt-1 text-sm block"
               >
-                Send Email
+                Email
               </a>
 
               <a
@@ -225,8 +225,8 @@ function Footer() {
             <Image
               src="/Yashita_profile.jpg"
               alt="Yashita Gogia Profile"
-              width={64}
-              height={64}
+              width={100}
+              height={100}
               className="rounded-full object-cover"
             />
             <div>
@@ -237,7 +237,7 @@ function Footer() {
                 rel="noopener noreferrer"
                 className="text-white no-underline mt-1 text-sm block"
               >
-                Send Email
+                Email
               </a>
 
               <a
