@@ -157,7 +157,7 @@ function Footer() {
                 href="https://mail.google.com/mail/?view=cm&fs=1&to=swayamsam2005@gmail.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white no-underline mt-1 text-sm block sm:text-lg md:text-xl"
+                className="text-white no-underline mt-1 text-sm block sm:text-md md:text-lg"
               >
                 Email
               </a>
@@ -166,7 +166,7 @@ function Footer() {
                 href="https://www.linkedin.com/in/swayamgupta12"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white no-underline mt-1 text-sm block sm:text-lg md:text-xl"
+                className="text-white no-underline mt-1 text-sm block sm:text-md md:text-lg"
               >
                 LinkedIn
               </a>
@@ -175,7 +175,7 @@ function Footer() {
                 href="https://github.com/SwayamGupta12345"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white no-underline mt-1 text-sm block sm:text-lg md:text-xl"
+                className="text-white no-underline mt-1 text-sm block sm:text-md md:text-lg"
               >
                 GitHub
               </a>
@@ -196,7 +196,7 @@ function Footer() {
                 href="https://mail.google.com/mail/?view=cm&fs=1&to=rishugoyal16800@gmail.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white no-underline mt-1 text-sm block sm:text-lg md:text-xl"
+                className="text-white no-underline mt-1 text-sm block sm:text-md md:text-lg"
               >
                 Email
               </a>
@@ -205,7 +205,7 @@ function Footer() {
                 href="https://www.linkedin.com/in/rishu0405"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white no-underline mt-1 text-sm block sm:text-lg md:text-xl"
+                className="text-white no-underline mt-1 text-sm block sm:text-md md:text-lg"
               >
                 LinkedIn
               </a>
@@ -214,7 +214,7 @@ function Footer() {
                 href="https://github.com/rishugoyal805"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white no-underline mt-1 text-sm block sm:text-lg md:text-xl"
+                className="text-white no-underline mt-1 text-sm block sm:text-md md:text-lg"
               >
                 GitHub
               </a>
@@ -235,7 +235,7 @@ function Footer() {
                 href="https://mail.google.com/mail/?view=cm&fs=1&to=yashita.gogia@gmail.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white no-underline mt-1 text-sm block sm:text-lg md:text-xl"
+                className="text-white no-underline mt-1 text-sm block sm:text-md md:text-lg"
               >
                 Email
               </a>
@@ -244,7 +244,7 @@ function Footer() {
                 href="https://www.linkedin.com/in/yashita-gogia-b05043289/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white no-underline mt-1 text-sm block sm:text-lg md:text-xl"
+                className="text-white no-underline mt-1 text-sm block sm:text-md md:text-lg"
               >
                 LinkedIn
               </a>
@@ -253,7 +253,7 @@ function Footer() {
                 href="https://github.com/yashita7"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white no-underline mt-1 text-sm block sm:text-lg md:text-xl"
+                className="text-white no-underline mt-1 text-sm block sm:text-md md:text-lg"
               >
                 GitHub
               </a>
