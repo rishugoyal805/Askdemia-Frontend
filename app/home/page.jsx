@@ -232,7 +232,7 @@ function Footer() {
             <div>
               <h4 className="text-lg font-semibold">Yashita Gogia</h4>
               <a
-                href="https://mail.google.com/mail/?view=cm&fs=1&to=yashitagogia@gmail.com"
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=yashita.gogia@gmail.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white no-underline mt-1 text-sm block"
