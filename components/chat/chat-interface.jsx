@@ -85,7 +85,7 @@ const Chat = ({ user }) => {
 
   const fetchChatHistory = async () => {
     try {
-      const response = await axios.get(`https://askdemia.onrender.com/chat/history/${user.email}`);
+      const response = await axios.get(`https://askdemia1.onrender.com/chat/history/${user.email}`);
       if (response.data && response.data.messages) {
         setMessages(response.data.messages);
       }
